@@ -1,271 +1,359 @@
----
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error 24 — Software Studio</title>
+  <meta name="description" content="Error 24 is an independent software studio building tools for creative communities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-const currentYear = new Date().getFullYear();
----
+    :root {
+      --teal-50: #effcfc;
+      --teal-100: #d7f6f6;
+      --teal-200: #b3ecee;
+      --teal-300: #7edde1;
+      --teal-400: #40c5cc;
+      --teal-500: #25a9b2;
+      --teal-600: #218896;
+      --teal-700: #216e7a;
+      --teal-800: #235a64;
+      --teal-900: #1e4950;
+      --slate-50: #f8fafb;
+      --slate-100: #f0f3f5;
+      --slate-200: #e2e7eb;
+      --slate-300: #c8d0d7;
+      --slate-400: #94a3b0;
+      --slate-500: #6b7b8a;
+      --slate-600: #556270;
+      --slate-700: #44505c;
+      --slate-800: #2e3740;
+      --slate-900: #1a2028;
+      --slate-950: #0d1117;
+      --radius: 6px;
 
-<Layout title="Error 24 — Thoughtful Software for Performing Arts">
-  <div class="min-h-screen">
-    
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden stage-hero">
-      <div class="absolute inset-0 stage-hero-overlay pointer-events-none"></div>
-      
-      <div class="max-w-6xl mx-auto px-6 pt-24 md:pt-32 pb-16 md:pb-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <!-- Left: Content -->
-          <div class="order-2 lg:order-1">
-            <!-- Label -->
-            <div class="animate-in mb-6">
-              <span class="label-editorial">Currently Building</span>
-            </div>
-            
-            <!-- Main Headline -->
-            <h1 class="animate-in delay-1 mb-6">
-              Production management, <br class="hidden md:block" />
-              <span class="text-primary">reimagined.</span>
-            </h1>
-            
-            <!-- Description -->
-            <p class="animate-in delay-2 text-editorial text-muted-foreground mb-8 max-w-lg">
-              Stagely is a mobile-first app designed for community theatre, schools, 
-              and youth groups. Schedule rehearsals, track attendance, manage your 
-              cast and crew — all in one place.
-            </p>
-            
-            <!-- CTA Buttons -->
-            <div class="animate-in delay-3 flex flex-wrap gap-4">
-              <a href="/pricing" class="btn-teal">
-                View Pricing
-              </a>
-              <a href="mailto:hello@error24.com" class="btn-teal-outline">
-                Get Early Access
-              </a>
-            </div>
-            
-            <!-- Trust Indicators -->
-            <div class="animate-in delay-4 mt-12 pt-8 border-t border-border">
-              <p class="text-xs text-muted-foreground mb-4">Built for</p>
-              <div class="flex flex-wrap gap-6 text-sm text-muted-foreground">
-                <span class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  Community Theatre
-                </span>
-                <span class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  Schools
-                </span>
-                <span class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  Youth Groups
-                </span>
-              </div>
-            </div>
+      --font-pixel: 'JetBrains Mono', 'SF Mono', monospace;
+      --font-sans: 'Outfit', sans-serif;
+    }
+
+    html {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      color: var(--slate-200);
+      background: var(--slate-950);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(37, 169, 178, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 100%, rgba(37, 169, 178, 0.04) 0%, transparent 50%),
+        var(--slate-950);
+    }
+
+    /* ── Typography ── */
+    .mono { font-family: 'JetBrains Mono', 'SF Mono', monospace; }
+    .sans { font-family: 'Outfit', sans-serif; }
+
+    a { color: var(--teal-400); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--teal-300); }
+
+    /* ── Layout ── */
+    .container {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Nav ── */
+    nav {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border: 2px solid var(--teal-500);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--teal-400);
+      position: relative;
+    }
+
+    .logo-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--slate-200);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-link-email {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--slate-500);
+      transition: color 0.2s;
+    }
+    .nav-link-email:hover { color: var(--teal-400); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 6rem 0 4rem;
+    }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--slate-50);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 .teal { color: var(--teal-400); }
+
+    .hero p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--slate-400);
+      max-width: 540px;
+      font-weight: 300;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent);
+      margin: 0;
+    }
+
+    /* ── Products ── */
+    .products {
+      padding: 4rem 0;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--teal-500);
+      margin-bottom: 2.5rem;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.015);
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .product-card:hover {
+      border-color: rgba(37, 169, 178, 0.2);
+      background: rgba(37, 169, 178, 0.03);
+    }
+
+    .product-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--slate-50);
+      letter-spacing: -0.02em;
+    }
+
+    .product-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      background: rgba(37, 169, 178, 0.12);
+      color: var(--teal-400);
+      display: inline-flex;
+      width: fit-content;
+    }
+
+    .product-desc {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--slate-400);
+      font-weight: 300;
+    }
+
+    /* ── About ── */
+    .about {
+      padding: 4rem 0;
+    }
+
+    .about p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--slate-400);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .about p:last-child { margin-bottom: 0; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-copy {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--slate-600);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--slate-500);
+    }
+
+    .footer-abn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--slate-700);
+    }
+
+    /* ── Animations ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.5s ease-out forwards;
+    }
+    .d1 { animation-delay: 0.05s; }
+    .d2 { animation-delay: 0.12s; }
+    .d3 { animation-delay: 0.2s; }
+    .d4 { animation-delay: 0.3s; }
+    .d5 { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .hero { padding: 4rem 0 3rem; }
+      .products, .about { padding: 3rem 0; }
+      .nav-link-email { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <div class="logo">
+        <span class="logo-text">error</span>
+        <div class="logo-mark">24</div>
+      </div>
+      <a href="mailto:hello@error24.com.au" class="nav-link-email">hello@error24.com.au</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 class="fade-in d1">Tools to help creative people<br /><span class="teal">get stuff done.</span></h1>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="products">
+      <div class="container">
+        <div class="section-label fade-in d3">// products</div>
+        <div class="product-card fade-in d4">
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <span class="product-name">Stagely</span>
+            <span class="product-badge">In Development</span>
           </div>
-          
-          <!-- Right: Visual -->
-          <div class="order-1 lg:order-2 animate-in delay-2">
-            <div class="card-luxe stage-card p-6 md:p-8">
-              <div class="flex items-center gap-3 mb-6 border-b border-border pb-4">
-                <div class="preview-icon w-10 h-10 rounded-lg flex items-center justify-center">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <span class="font-semibold text-lg">Stagely</span>
-              </div>
-              
-              <div class="space-y-3">
-                <div class="preview-row preview-row-live">
-                  <div class="w-2 h-2 rounded-full bg-primary"></div>
-                  <div class="flex-1">
-                    <p class="text-sm font-medium">Rehearsal — Week 3</p>
-                    <p class="text-xs text-muted-foreground">Today, 6:00 PM</p>
-                  </div>
-                  <span class="text-xs font-semibold text-foreground bg-primary/30 border-2 border-border px-2 py-1 rounded">32 attending</span>
-                </div>
-                
-                <div class="preview-row preview-row-muted">
-                  <div class="w-2 h-2 rounded-full bg-muted-foreground"></div>
-                  <div class="flex-1">
-                    <p class="text-sm font-medium">Tech Week — Day 1</p>
-                    <p class="text-xs text-muted-foreground">Tomorrow, 5:00 PM</p>
-                  </div>
-                  <span class="text-xs text-muted-foreground">28 confirmed</span>
-                </div>
-                
-                <div class="preview-row preview-row-muted">
-                  <div class="w-2 h-2 rounded-full bg-muted-foreground"></div>
-                  <div class="flex-1">
-                    <p class="text-sm font-medium">Dress Rehearsal</p>
-                    <p class="text-xs text-muted-foreground">Fri, 7:00 PM</p>
-                  </div>
-                  <span class="text-xs text-muted-foreground">Pending</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Badge -->
-            <div class="mt-4 flex justify-end">
-              <div class="ticket-badge px-4 py-3">
-                <p class="text-xs text-background/70 mb-1">Starting at</p>
-                <p class="text-2xl font-semibold">Free</p>
-              </div>
-            </div>
-          </div>
+          <p class="product-desc">Production management for performing arts companies. Scheduling, attendance, communication, and file sharing - built for the way theatre actually works.</p>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-20 md:py-32 border-t border-border section-slab">
-      <div class="max-w-6xl mx-auto px-6">
-        <!-- Section Header -->
-        <div class="max-w-2xl mb-16">
-          <span class="label-editorial mb-4 block">Features</span>
-          <h2 class="mb-4">Everything you need, nothing you don't.</h2>
-          <p class="text-editorial text-muted-foreground">
-            Stagely is designed specifically for the realities of community and 
-            educational theatre. No bloat, no enterprise complexity.
-          </p>
-        </div>
-        
-        <!-- Features Grid -->
-        <div class="features-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          
-          <!-- Feature 1 -->
-          <div class="card-luxe p-6">
-            <div class="feature-icon">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="text-lg mb-2">Smart Scheduling</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">
-              Create rehearsal schedules in minutes. Recurring events, conflict 
-              detection, and automatic notifications.
-            </p>
-          </div>
-          
-          <!-- Feature 2 -->
-          <div class="card-luxe p-6">
-            <div class="feature-icon">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-              </svg>
-            </div>
-            <h3 class="text-lg mb-2">Attendance Tracking</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">
-              Know who's coming before they arrive. Cast and crew confirm 
-              attendance, and you see it all at a glance.
-            </p>
-          </div>
-          
-          <!-- Feature 3 -->
-          <div class="card-luxe p-6">
-            <div class="feature-icon">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </div>
-            <h3 class="text-lg mb-2">Cast & Crew Management</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">
-              Organise your company by role, department, or custom groups. 
-              Contact info, conflicts, and availability all in one place.
-            </p>
-          </div>
-          
-          <!-- Feature 4 -->
-          <div class="card-luxe p-6">
-            <div class="feature-icon">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-            </div>
-            <h3 class="text-lg mb-2">In-App Communication</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">
-              Replace the WhatsApp chaos. Announcements, group chats, and 
-              direct messages — all tied to your productions.
-            </p>
-          </div>
-          
-          <!-- Feature 5 -->
-          <div class="card-luxe p-6">
-            <div class="feature-icon">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-              </svg>
-            </div>
-            <h3 class="text-lg mb-2">File Sharing</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">
-              Scripts, sheet music, rehearsal recordings — share files with 
-              specific groups or the entire company.
-            </p>
-          </div>
-          
-          <!-- Feature 6 -->
-          <div class="card-luxe p-6">
-            <div class="feature-icon">
-              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <h3 class="text-lg mb-2">Mobile-First Design</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed">
-              Built for the way theatre actually works. Check schedules between 
-              scenes, send quick updates from the wings.
-            </p>
-          </div>
-        </div>
+    <hr class="divider">
+
+    <section class="about">
+      <div class="container">
+        <div class="section-label fade-in d3">// about</div>
+        <p class="fade-in d4">Error 24 is a two-person software studio. We focus on building tools that solve real operational problems for communities that are typically underserved by software.</p>
+        <p class="fade-in d5">Based in Warrnambool, Australia.</p>
       </div>
     </section>
+  </main>
 
-    <!-- Philosophy Section -->
-    <section class="py-20 md:py-32 border-t border-border section-contrast">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <span class="label-editorial mb-6 block">Our Philosophy</span>
-        
-        <p class="text-editorial text-muted-foreground max-w-2xl mx-auto">
-          Stagely is priced on a capacity-based model because we believe 
-          accessibility matters. The same features are available to everyone — 
-          from school drama clubs to professional companies. Those who can afford 
-          more help subsidise access for those who can't.
-        </p>
-        
-        <div class="mt-12">
-          <a href="/pricing" class="btn-teal-outline">
-            See our pricing
-          </a>
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-row">
+        <span class="footer-copy">&copy; 2025 Error 24 Pty Ltd</span>
+        <div class="footer-links">
+          <a href="mailto:hello@error24.com.au">Contact</a>
         </div>
       </div>
-    </section>
+      <span class="footer-abn">ABN 14 694 990 424</span>
+    </div>
+  </footer>
 
-    <!-- CTA Section -->
-    <section class="py-20 md:py-32 section-call">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="mb-4">Ready to simplify your productions?</h2>
-        <p class="text-editorial text-muted-foreground mb-8 max-w-xl mx-auto">
-          Join the waitlist for early access. We're currently in MVP development 
-          and looking for beta testers from community theatre organisations.
-        </p>
-        
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="mailto:hello@error24.com" class="btn-teal">
-            Get Early Access
-          </a>
-          <a href="/pricing" class="btn-teal-outline">
-            View Pricing
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </div>
-</Layout>
+</body>
+</html>
