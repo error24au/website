@@ -1,0 +1,123 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Error 24 — Building thoughtful software for performing arts" } = Astro.props;
+const currentYear = new Date().getFullYear();
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="bg-background text-foreground antialiased min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-rail">
+      <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">Error 24</span>
+          <span class="text-xs text-muted-foreground font-normal hidden sm:inline">Pty Ltd</span>
+        </a>
+        
+        <!-- Nav Links -->
+        <div class="flex items-center gap-8">
+          <a 
+            href="/" 
+            class={`nav-link ${currentPath === '/' ? 'nav-link-active' : ''}`}
+          >
+            Home
+          </a>
+          <a 
+            href="/pricing" 
+            class={`nav-link ${currentPath === '/pricing' ? 'nav-link-active' : ''}`}
+          >
+            Pricing
+          </a>
+          <a 
+            href="mailto:hello@error24.com" 
+            class="btn-teal text-xs py-2 px-4"
+          >
+            Get in touch
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 pt-16">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border mt-auto">
+      <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <!-- Brand -->
+          <div>
+            <h3 class="text-lg font-semibold mb-2">Error 24</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+              Building thoughtful software for performing arts organisations. 
+              Currently focused on Stagely — production management for theatre.
+            </p>
+          </div>
+          
+          <!-- Product -->
+          <div>
+            <h4 class="label-editorial mb-4">Product</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="/" class="text-sm text-muted-foreground hover:text-primary transition-colors">Stagely</a>
+              </li>
+              <li>
+                <a href="/pricing" class="text-sm text-muted-foreground hover:text-primary transition-colors">Pricing</a>
+              </li>
+              <li>
+                <span class="text-sm text-muted-foreground/50">Features (coming soon)</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Company -->
+          <div>
+            <h4 class="label-editorial mb-4">Company</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="mailto:hello@error24.com" class="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a>
+              </li>
+              <li>
+                <span class="text-sm text-muted-foreground/50">About (coming soon)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="text-xs text-muted-foreground">
+            © {currentYear} Error 24 Pty Ltd. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
