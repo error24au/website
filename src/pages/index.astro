@@ -1,359 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error 24 — Software Studio</title>
-  <meta name="description" content="Error 24 is an independent software studio building tools for creative communities.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Error 24 — Software Studio</title>
+        <meta
+            name="description"
+            content="Error 24 is an independent software studio building tools for creative communities."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body
+        class="min-h-screen bg-[#0d1117] text-[#e2e7eb] antialiased text-[17px]"
+    >
+        <nav class="border-b border-white/10 py-5">
+            <div class="mx-auto flex w-full max-w-[720px] items-center justify-between px-6">
+                <div class="flex items-center gap-[0.65rem]">
+                    <span
+                        class="[font-family:'JetBrains_Mono','SF_Mono',monospace] text-[0.85rem] font-semibold tracking-tight text-[#e2e7eb]"
+                        >error</span
+                    >
+                    <div
+                        class="flex h-8 w-8 items-center justify-center rounded-md border-2 border-[#25a9b2] [font-family:'JetBrains_Mono','SF_Mono',monospace] text-[0.8rem] font-bold text-[#40c5cc]"
+                    >
+                        24
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-    :root {
-      --teal-50: #effcfc;
-      --teal-100: #d7f6f6;
-      --teal-200: #b3ecee;
-      --teal-300: #7edde1;
-      --teal-400: #40c5cc;
-      --teal-500: #25a9b2;
-      --teal-600: #218896;
-      --teal-700: #216e7a;
-      --teal-800: #235a64;
-      --teal-900: #1e4950;
-      --slate-50: #f8fafb;
-      --slate-100: #f0f3f5;
-      --slate-200: #e2e7eb;
-      --slate-300: #c8d0d7;
-      --slate-400: #94a3b0;
-      --slate-500: #6b7b8a;
-      --slate-600: #556270;
-      --slate-700: #44505c;
-      --slate-800: #2e3740;
-      --slate-900: #1a2028;
-      --slate-950: #0d1117;
-      --radius: 6px;
+        <main class="flex-1">
+            <section class="py-16 sm:py-24 sm:pb-16">
+                <div class="mx-auto w-full max-w-[720px] px-6">
+                    <h1
+                        class="animate-fade-in-up opacity-0 [animation-delay:0.05s] text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.2] tracking-[-0.03em] text-[#f8fafb]"
+                    >
+                        Tools to help creative people<br /><span class="text-[#40c5cc]"
+                            >get stuff done.</span>
+                    </h1>
+                </div>
+            </section>
 
-      --font-pixel: 'JetBrains Mono', 'SF Mono', monospace;
-      --font-sans: 'Outfit', sans-serif;
-    }
+            <section class="py-12 sm:py-16">
+                <div class="mx-auto w-full max-w-[720px] px-6">
+                    <div
+                        class="mb-10 animate-fade-in-up opacity-0 [animation-delay:0.2s] [font-family:'JetBrains_Mono','SF_Mono',monospace] text-[0.8rem] font-medium uppercase tracking-[0.15em] text-[#25a9b2]"
+                    >
+                        // about
+                    </div>
+                    <p
+                        class="mb-4 animate-fade-in-up opacity-0 [animation-delay:0.3s] text-[0.95rem] font-light leading-[1.75] text-[#94a3b0]"
+                    >
+                        Error 24 is a two-person software studio. We focus on
+                        building tools that solve real operational problems for
+                        communities that are typically underserved by software.
+                    </p>
+                    <p
+                        class="mb-4 animate-fade-in-up opacity-0 [animation-delay:0.3s] text-[0.95rem] font-light leading-[1.75] text-[#94a3b0]"
+                    >
+                        At the moment, we're building <span class="text-white font-medium">Stagely</span>, a production management for performing arts companies.
+                        Scheduling, attendance, communication, and file
+                        sharing - built for the way theatre actually works.
+                    </p>
+                    <p
+                        class="animate-fade-in-up opacity-0 [animation-delay:0.4s] text-[0.95rem] font-light leading-[1.75] text-[#94a3b0]"
+                    >
+                        Based in Warrnambool, Australia.
+                    </p>
+                </div>
+            </section>
 
-    html {
-      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
-      color: var(--slate-200);
-      background: var(--slate-950);
-    }
+            <section class="py-12 sm:py-16">
+                <div class="mx-auto w-full max-w-[720px] px-6">
+                    <div
+                        class="mb-10 animate-fade-in-up opacity-0 [animation-delay:0.2s] [font-family:'JetBrains_Mono','SF_Mono',monospace] text-[0.8rem] font-medium uppercase tracking-[0.15em] text-[#25a9b2]"
+                    >
+                        // contact
+                    </div>
+                    <form
+                        id="contact-form"
+                        class="flex flex-col gap-4 animate-fade-in-up opacity-0 [animation-delay:0.3s]"
+                        method="POST"
+                        action="/api/contact"
+                    >
+                        <input
+                            class="rounded-md border border-white/10 bg-white/[0.015] px-4 py-3 text-[0.95rem] text-[#e2e7eb] placeholder:text-[#6b7b8a] outline-none transition-colors focus:border-[#25a9b2]/60"
+                            name="name"
+                            required
+                            placeholder="Name"
+                        />
+                        <input
+                            class="rounded-md border border-white/10 bg-white/[0.015] px-4 py-3 text-[0.95rem] text-[#e2e7eb] placeholder:text-[#6b7b8a] outline-none transition-colors focus:border-[#25a9b2]/60"
+                            name="email"
+                            type="email"
+                            required
+                            placeholder="Email"
+                        />
+                        <textarea
+                            class="min-h-[140px] rounded-md border border-white/10 bg-white/[0.015] px-4 py-3 text-[0.95rem] text-[#e2e7eb] placeholder:text-[#6b7b8a] outline-none transition-colors focus:border-[#25a9b2]/60"
+                            name="message"
+                            required
+                            placeholder="Message"
+                        ></textarea>
+                        <button
+                            id="contact-submit"
+                            class="inline-flex w-fit items-center justify-center rounded-md border border-[#25a9b2]/50 bg-[#25a9b2]/[0.12] px-5 py-2.5 [font-family:'JetBrains_Mono','SF_Mono',monospace] text-[0.75rem] uppercase tracking-[0.1em] text-[#40c5cc] transition-colors hover:bg-[#25a9b2]/20"
+                            type="submit"
+                        >
+                            Send
+                        </button>
+                        <p
+                            id="contact-feedback"
+                            class="min-h-6 text-sm"
+                            aria-live="polite"
+                        ></p>
+                    </form>
+                </div>
+            </section>
+        </main>
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background:
-        radial-gradient(ellipse at 20% 0%, rgba(37, 169, 178, 0.07) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 100%, rgba(37, 169, 178, 0.04) 0%, transparent 50%),
-        var(--slate-950);
-    }
+        <footer class="mt-auto border-t border-white/10 py-10">
+            <div class="mx-auto flex w-full max-w-[720px] flex-col gap-3 px-6">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <span
+                        class="[font-family:'JetBrains_Mono','SF_Mono',monospace] text-[0.95rem] text-[#556270]"
+                        >&copy; 2025 Error 24 Pty Ltd</span
+                    >
+                </div>
+                <span
+                    class="[font-family:'JetBrains_Mono','SF_Mono',monospace] text-[0.9rem] text-[#44505c]"
+                    >ABN 14 694 990 424</span
+                >
+            </div>
+        </footer>
+        <script>
+          const form = document.getElementById("contact-form");
+          const msg = document.getElementById("contact-feedback");
 
-    /* ── Typography ── */
-    .mono { font-family: 'JetBrains Mono', 'SF Mono', monospace; }
-    .sans { font-family: 'Outfit', sans-serif; }
+          form.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-    a { color: var(--teal-400); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--teal-300); }
+            const res = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+            });
 
-    /* ── Layout ── */
-    .container {
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+            const json = await res.json();
+            msg.textContent = res.ok ? "Thanks, we'll get back to you soon!" : (json.error || "Sorry, failed to send. Try emailing us at: hello [at] error24.com.au");
+            if (res.ok) form.reset();
+          });
+        </script>
 
-    /* ── Nav ── */
-    nav {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-    }
-
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      border: 2px solid var(--teal-500);
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 700;
-      font-size: 0.8rem;
-      color: var(--teal-400);
-      position: relative;
-    }
-
-    .logo-text {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--slate-200);
-      letter-spacing: -0.02em;
-    }
-
-    .nav-link-email {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--slate-500);
-      transition: color 0.2s;
-    }
-    .nav-link-email:hover { color: var(--teal-400); }
-
-    /* ── Hero ── */
-    .hero {
-      padding: 6rem 0 4rem;
-    }
-
-    .hero h1 {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 600;
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      color: var(--slate-50);
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero h1 .teal { color: var(--teal-400); }
-
-    .hero p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--slate-400);
-      max-width: 540px;
-      font-weight: 300;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      border: none;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent);
-      margin: 0;
-    }
-
-    /* ── Products ── */
-    .products {
-      padding: 4rem 0;
-    }
-
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--teal-500);
-      margin-bottom: 2.5rem;
-    }
-
-    .product-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 1.75rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.015);
-      transition: border-color 0.3s, background 0.3s;
-    }
-
-    .product-card:hover {
-      border-color: rgba(37, 169, 178, 0.2);
-      background: rgba(37, 169, 178, 0.03);
-    }
-
-    .product-name {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 600;
-      font-size: 1.15rem;
-      color: var(--slate-50);
-      letter-spacing: -0.02em;
-    }
-
-    .product-badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.2rem 0.5rem;
-      border-radius: 3px;
-      background: rgba(37, 169, 178, 0.12);
-      color: var(--teal-400);
-      display: inline-flex;
-      width: fit-content;
-    }
-
-    .product-desc {
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: var(--slate-400);
-      font-weight: 300;
-    }
-
-    /* ── About ── */
-    .about {
-      padding: 4rem 0;
-    }
-
-    .about p {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--slate-400);
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
-
-    .about p:last-child { margin-bottom: 0; }
-
-    /* ── Footer ── */
-    footer {
-      margin-top: auto;
-      padding: 2.5rem 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .footer-copy {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--slate-600);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.25rem;
-    }
-
-    .footer-links a {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--slate-500);
-    }
-
-    .footer-abn {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--slate-700);
-    }
-
-    /* ── Animations ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: fadeUp 0.5s ease-out forwards;
-    }
-    .d1 { animation-delay: 0.05s; }
-    .d2 { animation-delay: 0.12s; }
-    .d3 { animation-delay: 0.2s; }
-    .d4 { animation-delay: 0.3s; }
-    .d5 { animation-delay: 0.4s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 480px) {
-      .hero { padding: 4rem 0 3rem; }
-      .products, .about { padding: 3rem 0; }
-      .nav-link-email { display: none; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <div class="container nav-inner">
-      <div class="logo">
-        <span class="logo-text">error</span>
-        <div class="logo-mark">24</div>
-      </div>
-      <a href="mailto:hello@error24.com.au" class="nav-link-email">hello@error24.com.au</a>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="fade-in d1">Tools to help creative people<br /><span class="teal">get stuff done.</span></h1>
-      </div>
-    </section>
-
-    <hr class="divider">
-
-    <section class="products">
-      <div class="container">
-        <div class="section-label fade-in d3">// products</div>
-        <div class="product-card fade-in d4">
-          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-            <span class="product-name">Stagely</span>
-            <span class="product-badge">In Development</span>
-          </div>
-          <p class="product-desc">Production management for performing arts companies. Scheduling, attendance, communication, and file sharing - built for the way theatre actually works.</p>
-        </div>
-      </div>
-    </section>
-
-    <hr class="divider">
-
-    <section class="about">
-      <div class="container">
-        <div class="section-label fade-in d3">// about</div>
-        <p class="fade-in d4">Error 24 is a two-person software studio. We focus on building tools that solve real operational problems for communities that are typically underserved by software.</p>
-        <p class="fade-in d5">Based in Warrnambool, Australia.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-row">
-        <span class="footer-copy">&copy; 2025 Error 24 Pty Ltd</span>
-        <div class="footer-links">
-          <a href="mailto:hello@error24.com.au">Contact</a>
-        </div>
-      </div>
-      <span class="footer-abn">ABN 14 694 990 424</span>
-    </div>
-  </footer>
-
-</body>
+    </body>
 </html>
